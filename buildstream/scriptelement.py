@@ -89,6 +89,9 @@ class ScriptElement(Element):
         else:
             self.__install_root = install_root
 
+    def get_install_root(self):
+        return self.__install_root
+
     def set_root_read_only(self, root_read_only):
         """Sets root read-only
 
@@ -103,6 +106,9 @@ class ScriptElement(Element):
           read-only.
         """
         self.__root_read_only = root_read_only
+
+    def get_root_read_only(self):
+        return self.__root_read_only
 
     def layout_add(self, element, destination):
         """Adds an element-destination pair to the layout.
@@ -163,6 +169,9 @@ class ScriptElement(Element):
         if not self.__commands:
             self.__commands = OrderedDict()
         self.__commands[group_name] = command_list
+
+    def get_commands(self):
+        return self.__commands
 
     def __validate_layout(self):
         if self.__layout:
